@@ -1,0 +1,25 @@
+header {
+    box-shadow: 0 4px 20px 0 rgba($color: #000000, $alpha: 0.25);
+    padding: 0 50px;
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .menu {
+            display: flex;
+            gap: 50px;
+
+            .menu-item {
+                font-weight: 300;
+                font-size: 1.25rem;
+            }
+        }
+    }
+}
+
+.custom-logo {
+    width: 139px;
+    height: auto;
+}
