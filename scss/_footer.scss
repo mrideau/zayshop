@@ -1,0 +1,108 @@
+footer {
+    color: #E9EDF2;
+
+    .content {
+        padding: 25px 70px;
+        background-color: #212934;
+        
+        .separator {
+            display: block;
+            margin: 15px 0;
+            height: 1px;
+            background-color: #2D3540;
+        }
+        
+        .columns {
+            display: flex;
+            // display: grid;
+            // grid-template-columns: repeat(auto-fit, minmax(31.3333%, 1fr))
+            gap: 2%;
+            
+            .column {
+                flex: 1 1 auto;
+                font-weight: 300;
+                color: #D9DDE5;
+                // text-align: center; // Responsive
+
+                h3 {
+                    font-family: 'Lato';
+                    font-weight: inherit;
+
+                    &.zayshop {
+                        color: #69BB7E;
+                        font-weight: 700;
+                    }
+                }
+                
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.25rem;
+                }
+
+                .menu {
+                    gap: 10px;
+                }
+            }
+        }
+        
+        a {
+            color: inherit;
+            font-weight: inherit;
+        }
+
+        .bottom {
+            display: flex;
+            justify-content: space-between;
+
+            .sci {
+                display: flex;
+                gap: 15px;
+    
+                a {
+                    width: 40px;
+                    height: 40px;
+                    padding: 10px;
+                    border: 1px solid #373C44;
+                    border-radius: 50%;
+                }
+            }
+    
+            .mail {
+                form {
+                    display: flex;
+                    
+                    input {
+                        font-weight: 200;
+                        font-size: 1.2rem;
+                        padding: 5px 15px;
+    
+                        &[type='email'] {
+                            border-radius: 5px 0 0 5px;
+                            border: 1px solid #373C44;
+                            color: #373C44;
+                            background-color: transparent;
+                        }
+        
+                        &[type='submit'] {
+                            background-color: #69BB7E;
+                            border: 0;
+                            color: white;
+                            border-radius: 0 5px 5px 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    .copyrights {
+        padding: 25px 50px;
+        background-color: #1C252E;
+
+        a {
+            text-decoration: underline;
+            color: inherit;
+        }
+    }
+}

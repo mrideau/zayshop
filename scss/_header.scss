@@ -1,25 +1,179 @@
 header {
+    position: relative;
     box-shadow: 0 4px 20px 0 rgba($color: #000000, $alpha: 0.25);
-    padding: 0 50px;
+    
+    .top-bar {
+        background-color: #212934;
+        padding: 10px 50px;
+        color: #CED6E1;
+        font-size: 0.8rem;
 
+        a {
+            color: inherit;
+            font-weight: 300;
+        }
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        
+        ul {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+    }
+    
     nav {
+        padding: 0 50px;
         display: flex;
         justify-content: space-between;
         align-items: center;
 
-        .menu {
+        .nav-icons {
             display: flex;
-            gap: 50px;
+            gap: 30px;
+
+            .nav-icon {
+                button {
+                    border: 0;
+                    background-color: transparent;
+                    font-size: 1.25rem;
+                    cursor: pointer;
+                    position: relative;
+                    
+                    .icon-badge {
+                        font-size: 0.8rem;
+                        background-color: #E9EEF4;
+                        color: #202429;
+                        padding: 5px 10px;
+                        border-radius: 40px;
+                        display: flex;
+                        position: absolute;
+                        top: -20px;
+                        right: -20px;
+                        font-weight: 900;
+                    }
+                }
+            }
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 100px;
 
             .menu-item {
                 font-weight: 300;
                 font-size: 1.25rem;
+                position: relative;
+                
+                a {
+                    color: #373C44;
+                }
+
+                &:hover {
+                    transform: scale(1.03);
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        width: 100%;
+                        height: 2px;
+                        bottom: 0;
+                        background-color: #a8c0ad;
+                    }
+                }
+
+                &.current_page_item {
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        width: 100%;
+                        height: 2px;
+                        bottom: 0;
+                        background-color: #69BB7E;
+                    }
+                }
             }
         }
     }
 }
 
 .custom-logo {
-    width: 139px;
+    width: 80px;
     height: auto;
+}
+
+.search-bar {
+    display: none;
+    position: absolute;
+    z-index: 2;
+    right: 150px;
+    bottom: -20px;
+    
+    input {
+        padding: 10px;
+        border: 1px solid #373C44;
+        width: 20vw;
+        border-radius: 20px;
+    }
+}
+
+.cart {
+    display: none;
+    position: absolute;
+    z-index: 2;
+    right: 0;
+    border: 1px solid #373C44;
+    padding: 1rem 2rem;
+    background-color: white;
+    width: 45%;
+    border-radius: 0 0 6px 6px;
+
+    .items {
+        .item {
+            
+
+            button {
+
+            }
+        }
+    }
+
+    h4 {
+        margin-top: 20px;
+    }
+    
+    .fields {
+        margin-top: 20px;
+        margin-bottom: 20px;
+
+        .field {
+            display: flex;
+            justify-content: space-between;
+    
+            &.total {
+                margin-top: 10px;
+                
+                p {
+                    font-weight: 900;
+                }
+            }
+        }
+    }
+
+    .orderbtn {
+        border-radius: 20px;
+        border: 50px;
+        color: white;
+        background-color: #69BB7E;
+        padding: 6px 35px;
+        float: right;
+        cursor: pointer;
+
+        i {
+            padding-right: 0.4rem;
+        }
+    }
 }

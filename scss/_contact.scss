@@ -1,0 +1,52 @@
+#contact {
+    .heading {
+        background-color: #E9EEF4;
+    }
+
+    // .map {
+    //     height: 200px;
+    // }
+
+    .wpcf7 {
+        form {
+            margin: auto;
+            padding: 80px;
+            font-weight: 300;
+            width: 80%;
+            height: fit-content;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            
+            .user-fields {
+                display: flex;
+                justify-content: space-between;
+                gap: 10px;
+
+                label {
+                    width: 100%;
+                }
+            }
+            
+            input, textarea {
+                font-family: inherit;
+                font-size: 1.1rem;
+                font-weight: inherit;
+                padding: 10px;
+                border: 1px solid #E8E8E8;
+                width: 100%;
+                border-radius: 5px;
+                color: #6C6E72;
+
+                &[type='submit'] {
+                    font-weight: 400;
+                    background-color: #56AB6B;
+                    color: #FFFDFF;
+                    border: 0;
+                    width: auto;
+                    float: right;
+                }
+            }
+        }
+    }
+}
