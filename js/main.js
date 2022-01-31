@@ -1,4 +1,6 @@
 function init_slideshow(slideshow) {
+    if ( !slideshow ) return;
+
     const slides = slideshow.find('.slide');
     const dots = slideshow.find('.dot');
     const buttons = slideshow.find('.buttons');
@@ -50,6 +52,13 @@ function init_slideshow(slideshow) {
     init(); // Initialize
 }
 
-$(document).ready(function($) {
+$(document).ready(function() {
     init_slideshow($('.slideshow'));
+
+
+    // Optimize
+    // Hide on click page link
+    $('.hamburger').click(function() {
+        $('#menu-menu-principal').toggleClass( 'active' );
+    });
 })

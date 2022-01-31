@@ -97,6 +97,52 @@ header {
                 }
             }
         }
+
+        .hamburger {
+            display: none;
+            border: 0;
+            background-color: transparent;
+            cursor: pointer;
+
+            .bar {
+                display: block;
+                margin: 5px auto;
+                width: 25px;
+                height: 3px;
+                background-color: red;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hamburger {
+                display: block;
+            }
+
+            .nav-menu {
+                display: none;
+
+                &.active {
+                    z-index: 999;
+                    display: inline-block;
+                    position: absolute;
+                    top: 120px;
+                    left: 0;
+                    background-color: #373C44;
+                    width: 100%;
+                    text-align: center;
+                    font-family: 400;
+                    
+                    li {
+                        margin: 20px auto;
+                        width: fit-content;
+
+                        a {
+                            color: #FBFBFB!important;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 

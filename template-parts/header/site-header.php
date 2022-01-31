@@ -1,9 +1,5 @@
 <header>
     <div class="top-bar">
-        <!-- <?php
-            // if (is_active_sidebar( 'top-bar' ))
-                dynamic_sidebar( 'top-bar' );
-        ?> -->
         <ul>
             <li>
                 <a href=""><i class="fas fa-envelope"></i> <?php echo get_theme_mod( 'zayshop_mail' ) ?></a>
@@ -37,8 +33,6 @@
             'theme_location' => 'primary',
             'menu_class' => 'nav-menu',
             'container' => 'ul',
-            // 'before' => '<li class="menu-item">',
-            // 'after' => '</li>'
 
         ) ); ?>
         
@@ -61,6 +55,11 @@
                 </button>
             </li>
         </ul>
+        <button class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
     </nav>
     <div class="search-bar">
         <form action="">

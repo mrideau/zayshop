@@ -22,7 +22,6 @@ footer {
                 flex: 1 1 auto;
                 font-weight: 300;
                 color: #D9DDE5;
-                // text-align: center; // Responsive
 
                 h3 {
                     font-family: 'Lato';
@@ -92,6 +91,22 @@ footer {
                         }
                     }
                 }
+            }
+        }
+
+        @media (max-width: 768px) {
+            .columns {
+                flex-direction: column;
+
+                .column {
+                    text-align: center;
+                }
+            }
+
+            .bottom {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
             }
         }
     }

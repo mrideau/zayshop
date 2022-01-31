@@ -3,23 +3,24 @@
 <main id="single-product">
     <div class="product">
         <div class="product-images">
+            <?php $images = get_field( 'galery' ); ?>
             <div class="img-box">
-                <img src="" alt="">
+                <img class="current-image" src="<?php echo $images[ 0 ][ 'url' ]; ?>" alt="">
             </div>
             <div class="galery">
-                <button><i class="fas fa-chevron-left"></i></button>
+                <button onclick="scroll_thumbnails( -100 )"><i class="fas fa-chevron-left"></i></button>
                 <div class="thumbnails">
-                    <?php 
-                    $images = get_field( 'galery' ); ?>
                     <ul>
                         <?php foreach( $images as $image ) : ?>
                             <li class="thumbnail">
-                                <img src="<?php echo esc_url($image['sizes']['thumbnail']); ?>" alt="Thumbnail of <?php echo esc_attr($image['alt']); ?>" />
+                                <button onclick="update_preview( '<?php echo $image['url']; ?>' )">
+                                    <img src="<?php echo esc_url($image['sizes']['thumbnail']); ?>" alt="Thumbnail of <?php echo esc_attr($image['alt']); ?>" />
+                                </button>
                             </li>
                         <?php  endforeach;?>
                     </ul>
                 </div>
-                <button><i class="fas fa-chevron-right"></i></button>
+                <button onclick="scroll_thumbnails( 100 )"><i class="fas fa-chevron-right"></i></button>
             </div>
         </div>
         <div class="product-details">
@@ -64,10 +65,10 @@
                 <section class="product-quantity">
                     <p>Quantity</p>
                     <form>
-                        <input type="button" value="+">
+                        <input type="button" value="-">
                         <input type="number" id="quantity" name="quantity"
                         min="1" max="99" value="1">
-                        <input type="button" value="-">
+                        <input type="button" value="+">
                     </form>
                 </section>
             </div>
@@ -78,7 +79,17 @@
         </div>
     </div>
     <div class="related-products">
+        <h3>Related Products</h3>
+        <div class="products">
+            <?php
+            $wp_query = new WP_Query( "post_type=product&order=ASC" ); ?>
+            <?php if ( $wp_query->have_posts() ) : while( $wp_query->have_posts() ) : $wp_query->the_post() ?>
+            <?php zayshop_product(); ?>
+            <?php endwhile; endif; ?>
+        </div>
+        <div class="dots">
 
+        </div>
     </div>
 </main>
 

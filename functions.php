@@ -38,6 +38,9 @@ function zayshop_setup() {
 
     // Images Sizes
     add_image_size( 'brand-thumbnail', 100, 70 );
+
+    // Add options page for ACF
+    acf_add_options_page();
 }
 add_action( 'after_setup_theme', 'zayshop_setup' );
 
@@ -47,6 +50,11 @@ function zayshop_scripts() {
     wp_register_script('jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js', false, '', true);
     wp_enqueue_script('jquery');
     wp_enqueue_script( 'zayshop-js', get_template_directory_uri() . '/js/main.js', array( 'jquery' ) );
+    
+    // Add JS for single-product page
+    if ( is_single() && get_post_type() == 'product' ) {
+        wp_enqueue_script( 'zayshop-js-single-product', get_template_directory_uri() . '/js/single-product.js' );
+    }
 }
 add_action( 'wp_enqueue_scripts', 'zayshop_scripts' );
 
@@ -198,5 +206,46 @@ function zayshop_stars($stars) {
             </li>
         <?php endfor; ?>
     </ul>
+    <?php
+}
+
+function zayshop_product() {
+    ?>
+    <article class="product-item">
+        <div class="img-box" style="background-image: url('<?php the_post_thumbnail_url(); ?>');">
+            <div class="buttons">
+                <a href=""><i class="far fa-heart"></i></a>
+                <a href="<?php echo the_permalink(); ?>"><i class="fas fa-eye"></i></a>
+                <a href=""><i class="fas fa-cart-plus"></i></a>
+            </div>
+        </div>
+        <div class="details">
+            <p class="title"><?php the_title() ?></p>
+            <?php $sizes = get_field( 'sizes' ); ?>
+            <?php if ( $sizes ) : ?>
+                <p class="sizes"><?php echo implode( '/', $sizes ); ?></p>
+            <?php endif; ?>
+            <?php zayshop_stars( get_field( 'stars' ) ); ?>
+            <p class="price">$<?php echo number_format( get_field( 'price' ), 2 ) ?></p>
+        </div>
+    </article>
+    <?php
+}
+
+function zayshop_brands() {
+    ?>
+    <section class="section brands">
+        <h2>Our Brands</h2>
+        <p class="section-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae iusto.</p>
+        <?php 
+        $images = get_field( 'brands', 'options' ); ?>
+        <ul class="brands-list">
+            <?php foreach( $images as $image ) : ?>
+                <li>
+                    <img src="<?php echo esc_url($image['sizes']['brand-thumbnail']); ?>" alt="Thumbnail of <?php echo esc_attr($image['alt']); ?>" />
+                </li>
+            <?php  endforeach;?>
+        </ul>
+    </section>
     <?php
 }
