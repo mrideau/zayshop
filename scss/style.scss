@@ -5,18 +5,77 @@ Template Name: Zayshop
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;500;700;900&display=swap');
 
+:root {
+    --zayshop: #69BB7E;
+    
+    --text-color: #373C44;
+    --text-color-bright: #CED6E1;
+
+    --border-color: #E6E7E9;
+
+    --slideshow-bg-color: #EFEFEF;
+    --slideshow-button-color: #A6CEB1;
+
+    --star-bg-color: #C4C4C4;
+    --star-active-bg-color: #EBE861;
+    
+    --topbar-bg-color: #212934;
+
+    --header-mobile-bg-color: #373C44;
+    --header-link-color: #373C44;
+    --header-link-hover-color: #a8c0ad;
+
+    --footer-bg-color: #212934;
+    --footer-separator-color: #2D3540;
+    --footer-link-color: var(--text-color-bright);
+    --footer-title-color: var(--text-color-bright);
+    --footer-sci-color: #373C44;
+    --footer-mail-text-color: #6F7881;
+    --footer-mail-border-color: #373C44;
+    --footer-submit-text-color: white;
+    
+    --copyrights-bg-color: #1C252E;
+    --copyrights-text-color: var(--text-color-bright);
+
+    --hamburger-bg-color: #373C44;
+    --hamburger-bar-color: #E9EDF2;
+
+    --badge-bg-color: #E9EEF4;
+    --badge-text-color: #202429;
+
+    --home-ctom-button-text-color: white;
+
+    --shop-text-color: #373C44;
+    --shop-pagenum-bg-color: white;
+
+    --featured-products-bg-color: #E9EEF4;
+    --featured-products-card-bg-color: white;
+    --featured-products-card-link-color: #BABABA;
+
+    --single-shop-bg-color: white;
+    --single-shop-img-bg-color: white;
+    --single-shop-brand-color: #C1C1C1;
+    --single-shop-qt-bg-color: #6C757E;
+    --single-shop-button-text-color: white;
+    --single-shop-dot-color: #C0C0C0;
+    --single-shop-dot-active-color: #404040;
+
+    --contact-hero-bg-color: #E9EEF4;
+    --contact-form-submit-text-color: #FFFDFF;
+    --contact-form-text-color: #6C6E72;
+
+    --about-text-color: white;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html, input {
+html, body, input {
     font-family: 'Roboto', sans-serif;
-}
-
-body {
-
+    color: var(--text-color);
 }
 
 ul {
@@ -65,20 +124,24 @@ p {
     gap: 2.5px;
 
     .star {
-        fill: #C4C4C4;
+        fill: var(--star-bg-color);
 
         &.active {
-            fill: #EBE861;
+            fill: var(--star-active-bg-color);
         }
     }
 }
 
 .slideshow {
-    position: relative;
-    background-color: #EFEFEF;
+    background-color: var(--slideshow-bg-color);
+    // display: flex;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: 1fr auto;
 
     .slides {
         position: relative;
+        height: 100%;
 
         .slide {
             position: absolute;
@@ -88,40 +151,30 @@ p {
         }
     }
 
-    .buttons {
-        z-index: 2;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: space-between;
-
-        button {
-            padding: 15px;
-            border: 0;
-            color: #A6CEB1;
-            background-color: transparent;
-            cursor: pointer;
-        }
+    .btn-left, .btn-right {
+        padding: 15px;
+        border: 0;
+        color: var(--slideshow-button-color);
+        background-color: transparent;
+        cursor: pointer;
     }
 
     .dots {
-        position: absolute;
-        bottom: 40px;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        grid-column: 2 / 3;
+        justify-self: center;
         display: flex;
         gap: 5px;
-        z-index: 2;
+        padding: 10px;
 
         .dot {
             cursor: pointer;
-            background-color: #A7CEAD;
+            background-color: var(--slideshow-button-color);
             width: 25px;
             height: 2px;
             border: 0;
 
             &.active {
-                background-color: #55AB68;
+                background-color: var(--zayshop);
             }
         }
     }
@@ -129,7 +182,7 @@ p {
 
 .product-item {
     // flex: 0 1 auto;
-    border: 1px solid #DFDEDD;
+    border: 1px solid var(--border-color);
     box-shadow: 0 4px 10px 0 rgba($color: #000000, $alpha: 0.1);
 
     .img-box {
@@ -160,7 +213,7 @@ p {
 
             a {
                 display: inline-block;
-                background-color: #69BB7E;
+                background-color: var(--zayshop);
                 padding: 12px;
                 border-radius: 4px;
 
@@ -174,7 +227,7 @@ p {
     .details {
         padding: 1rem;
         display: block;
-        border-top: 1px solid #DFDEDD;
+        border-top: 1px solid var(--border-color);
 
         .stars {
             justify-content: center;

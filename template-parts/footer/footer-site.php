@@ -11,7 +11,7 @@
                     <li>
                         <?php $tel = get_theme_mod( 'zayshop_tel' ); ?>
                         <?php preg_match_all( '([0-9]+)', $tel, $matches ); ?>
-                        <a href="tel:+<?php echo implode( $matches[ 0 ] );; ?>"><i class="fas fa-phone-alt"></i> <?php echo $tel ?></a>
+                        <a href="tel:+<?php echo implode( $matches[ 0 ] ); ?>"><i class="fas fa-phone-alt"></i> <?php echo $tel ?></a>
                     </li>
                     <li>
                         <?php $email = get_theme_mod( 'zayshop_mail' ); ?>

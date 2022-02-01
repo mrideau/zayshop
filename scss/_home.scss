@@ -5,7 +5,7 @@
         .slide-1 {
             display: flex;
             justify-content: space-between;
-            width: 60%;
+            align-items: center;
 
             h3 {
                 font-weight: 500;
@@ -14,6 +14,11 @@
             p {
                 margin-top: 1rem;
                 line-height: 1.5rem;
+            }
+
+            img {
+                width: 350px;
+                height: 350px;
             }
         }
     }
@@ -36,14 +41,14 @@
                 img {
                     width: 300px;
                     border-radius: 50%;
-                    border: 1px solid #E5E5E7;
+                    border: 1px solid var(--border-color);
                 }
 
                 .link {
-                    background-color: #57AD6C;
+                    background-color: var(--zayshop);
                     padding: 8px 12px;
                     font-weight: 300;
-                    color: white;
+                    color: var(--home-ctom-button-text-color);
                     border-radius: 5px;
 
                     &:hover {
@@ -59,7 +64,7 @@
     }
 
     .featured {
-        background-color: #E9EEF4;
+        background-color: var(--featured-products-bg-color);
 
         .products {
             margin-top: 50px;
@@ -74,7 +79,7 @@
                 flex: 1 1 380px;
                 display: flex;
                 flex-direction: column;
-                border: 1px solid #B3B7B9;
+                border: 1px solid var(--border-color);
                 border-radius: 4px;
 
                 .img-box {
@@ -92,7 +97,7 @@
                 }
 
                 .details {
-                    background-color: white;
+                    background-color: var(--featured-products-card-bg-color);
                     border-radius: 0 0 4px 4px;
                     padding: 1rem;
                     flex: 1;
@@ -107,7 +112,7 @@
                         display: inline-block;
                         margin-top: 15px;
                         margin-bottom: 25px;
-                        color: #BABABA;
+                        color: var(--featured-products-card-link-color);
                         font-weight: 300;
 
                         &:hover {

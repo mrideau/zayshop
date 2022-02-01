@@ -1,8 +1,8 @@
 <?php get_header(); ?>
-<!-- <?php the_content(); ?> -->
 
 <main id="home">
     <section class="slideshow">
+        <button class="btn-left"><i class="fas fa-4x fa-chevron-left"></i></button>
         <div class="slides">
             <div class="slide slide-1">
                 <div class="text">
@@ -10,16 +10,16 @@
                     <h3>Aliquip ex ea commodo consequat</h3>
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem cupiditate minus libero, repellendus laborum sed! Eos totam labore ad, perspiciatis ipsam, et nemo at earum vel rerum tempore repellat iusto!</p>
                 </div>
-                <img class="img" src="" alt="">
+                <?php $slide_1_image = get_field( 'slide_1_image' ); ?>
+                <?php if ( $slide_1_image ) : ?>
+                    <img src="<?php echo esc_url( $slide_1_image['url'] ); ?>" alt="<?php echo esc_attr( $slide_1_image['alt'] ); ?>" />
+                <?php endif; ?>
             </div>
             <div class="slide slide-2">
                 <h2>Slide 2</h2>
             </div>
         </div>
-        <div class="buttons">
-            <button class="left"><i class="fas fa-4x fa-chevron-left"></i></button>
-            <button class="right"><i class="fas fa-4x fa-chevron-right"></i></button>
-        </div>
+        <button class="btn-right"><i class="fas fa-4x fa-chevron-right"></i></button>
         <div class="dots">
             <span class="dot"></span>
             <span class="dot"></span>
@@ -41,11 +41,13 @@
                 if ( get_field( 'category_of_the_month', $term ) ) :
                     $image = get_field( 'image', $term );?>
                     <div class="card">
-                        <a href="<?php echo $term->slug; ?>">
+                        <!-- <a href="<?php echo $term->slug; ?>"> -->
+                        <a href="<?php echo home_url( '/shop/' ); ?>">
                             <img src="<?php echo $image[ 'url' ] ?>" alt="">
                         </a>
                         <h4><?php echo $term->name; ?></h4>
-                        <a class="link" href="<?php echo $term->slug; ?>">Go Shop</a>
+                        <!-- <a class="link" href="<?php echo $term->slug; ?>">Go Shop</a> -->
+                        <a class="link" href="<?php echo home_url( '/shop/' ); ?>">Go Shop</a>
                     </div>
                 <?php endif;
             }?>

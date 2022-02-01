@@ -17,7 +17,7 @@
             margin-top: 15px;
             display: flex;
             justify-content: space-between;
-            color: #373C44;
+            color: var(--shop-text-color);
         }
     }
 
@@ -32,11 +32,11 @@
                 width: 50%;
                 height: 30px;
                 padding: 10px;
-                border: 1px solid #EAEAEA;
+                border: 1px solid var(--border-color);
                 border-radius: 5px;
 
                 &::placeholder {
-                    color: #373C44;
+                    color: var(--shop-text-color);
                 }
             }
 
@@ -44,7 +44,7 @@
                 font-size: 1.25rem;
                 
                 a {
-                    color: #373C44;
+                    color: var(--shop-text-color);
                     font-weight: 300;
                 }
             }
@@ -59,13 +59,13 @@
                 box-shadow: 0 2px 4px 0 rgba($color: #000000, $alpha: 0.1);
                 font-weight: 300;
                 padding: 15px 20px;
-                color: black;
-                background-color: white;
-                border: 1px solid #DFE1E2;
+                color: var(--shop-text-color);
+                background-color: var(--shop-pagenum-bg-color);
+                border: 1px solid var(--border-color);
                 
                 &.current {
-                    color: white;
-                    background-color: #66BC7B;
+                    color: var(--shop-pagenum-bg-color);
+                    background-color: var(--zayshop);
                 }
             }
         }
@@ -75,8 +75,6 @@
         padding-top: 25px;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax( 270px, 1fr ));
-        // display: flex;
-        // flex-wrap: wrap;
         gap: 10px;
     }
 }

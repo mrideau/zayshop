@@ -2,10 +2,13 @@
     <div class="top-bar">
         <ul>
             <li>
-                <a href=""><i class="fas fa-envelope"></i> <?php echo get_theme_mod( 'zayshop_mail' ) ?></a>
+                <?php $email = get_theme_mod( 'zayshop_mail' ); ?>
+                <a href="mailto:<?php echo $email; ?>"><i class="fas fa-envelope"></i> <?php echo $email ?></a>
             </li>
             <li>
-                <a href=""><i class="fas fa-phone-alt"></i> <?php echo get_theme_mod( 'zayshop_tel' ) ?></a>
+                <?php $tel = get_theme_mod( 'zayshop_tel' ); ?>
+                <?php preg_match_all( '([0-9]+)', $tel, $matches ); ?>
+                <a href="tel:+<?php echo implode( $matches[ 0 ] ); ?>"><i class="fas fa-phone-alt"></i> <?php echo get_theme_mod( 'zayshop_tel' ) ?></a>
             </li>
         </ul>
         <ul>
@@ -70,7 +73,15 @@
         <h3><i class="fas fa-shopping-cart"></i> Votre panier : 1 item</h3>
         <div class="items">
             <div class="item">
+                <div class="item-thumbnail">
 
+                </div>
+                <div class="item-details">
+                    <h2 class="item-name">Lorem ipsum</h2>
+                    <p class="item-color">Color: White</p>
+                    <p class="item-price">$25.00</p>
+                </div>
+                <button class="delete-btn"><i class="fas fa-trash-alt"></i></button>
             </div>
         </div>
         <h4>Summary</h4>

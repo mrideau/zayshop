@@ -1,12 +1,24 @@
 #about {
     .heading {
-        background-color: #57AD6C;
-        height: 70vh;
-        color: white;
-        padding: 140px 70px;
+        background-color: var(--zayshop);
+        min-height: 70vh;
+        color: var(--about-text-color);
+        padding: 60px 70px;
+        display: flex;
+        align-items: center;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+            text-align: center;
+        }
 
         p {
-            width: 70%;
+            width: clamp(500px, 70%, 800px);
+        }
+
+        img {
+            width: clamp(300px, 30%, 600px);
+            margin: 10px auto;
         }
     }
 
@@ -28,7 +40,7 @@
                 justify-content: center;
 
                 i {
-                    color: #57AD6C;
+                    color: var(--zayshop);
                 }
 
                 p {

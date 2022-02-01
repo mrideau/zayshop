@@ -2,8 +2,14 @@
 
 <main id="about">
     <section class="heading">
-        <h3>About Us</h3>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus suscipit necessitatibus repudiandae, voluptas sint aperiam eaque harum id voluptatem corporis quod tempore!</p>
+        <div>
+            <h3>About Us</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus suscipit necessitatibus repudiandae, voluptas sint aperiam eaque harum id voluptatem corporis quod tempore!</p>
+        </div>
+        <?php $hero_image = get_field( 'hero_image' ); ?>
+        <?php if ( $hero_image ) : ?>
+            <img src="<?php echo esc_url( $hero_image['url'] ); ?>" alt="<?php echo esc_attr( $hero_image['alt'] ); ?>" />
+        <?php endif; ?>
     </section>
     <section class="section services">
         <h2>Our Services</h2>

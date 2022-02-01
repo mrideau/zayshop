@@ -3,9 +3,9 @@ header {
     box-shadow: 0 4px 20px 0 rgba($color: #000000, $alpha: 0.25);
     
     .top-bar {
-        background-color: #212934;
+        background-color: var(--topbar-bg-color);
         padding: 10px 50px;
-        color: #CED6E1;
+        color: var(--text-color-bright);
         font-size: 0.8rem;
 
         a {
@@ -44,8 +44,8 @@ header {
                     
                     .icon-badge {
                         font-size: 0.8rem;
-                        background-color: #E9EEF4;
-                        color: #202429;
+                        background-color: var(--badge-bg-color);
+                        color: var(--badge-text-color);
                         padding: 5px 10px;
                         border-radius: 40px;
                         display: flex;
@@ -68,7 +68,7 @@ header {
                 position: relative;
                 
                 a {
-                    color: #373C44;
+                    color: var(--header-link-color);
                 }
 
                 &:hover {
@@ -80,7 +80,7 @@ header {
                         width: 100%;
                         height: 2px;
                         bottom: 0;
-                        background-color: #a8c0ad;
+                        background-color: var(--header-link-hover-color);
                     }
                 }
 
@@ -92,7 +92,7 @@ header {
                         width: 100%;
                         height: 2px;
                         bottom: 0;
-                        background-color: #69BB7E;
+                        background-color: var(--zayshop);
                     }
                 }
             }
@@ -103,13 +103,16 @@ header {
             border: 0;
             background-color: transparent;
             cursor: pointer;
+            background-color: var(--hamburger-bg-color);
+            padding: 8px;
+            border-radius: 5px;
 
             .bar {
                 display: block;
                 margin: 5px auto;
-                width: 25px;
+                width: 30px;
                 height: 3px;
-                background-color: red;
+                background-color: var(--hamburger-bar-color);
             }
         }
 
@@ -127,7 +130,7 @@ header {
                     position: absolute;
                     top: 120px;
                     left: 0;
-                    background-color: #373C44;
+                    background-color: var(--header-mobile-bg-color);
                     width: 100%;
                     text-align: center;
                     font-family: 400;
@@ -137,7 +140,8 @@ header {
                         width: fit-content;
 
                         a {
-                            color: #FBFBFB!important;
+                            color: var(--text-color-bright)!important;
+                            // color: #FBFBFB!important;
                         }
                     }
                 }
@@ -160,7 +164,7 @@ header {
     
     input {
         padding: 10px;
-        border: 1px solid #373C44;
+        border: 1px solid var(--border-color);
         width: 20vw;
         border-radius: 20px;
     }
@@ -171,18 +175,53 @@ header {
     position: absolute;
     z-index: 2;
     right: 0;
-    border: 1px solid #373C44;
-    padding: 1rem 2rem;
+    border: 1px solid var(--border-color);
+    padding: 2rem;
     background-color: white;
     width: 45%;
     border-radius: 0 0 6px 6px;
 
     .items {
+        margin-top: 1rem;
+
         .item {
-            
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            gap: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            padding: 1rem;
 
-            button {
+            .item-thumbnail {
+                width: 75px;
+                height: 75px;
+                background-color: red;
+            }
 
+            .item-details {
+                .item-name {
+                    font-size: 1rem;
+                    font-weight: 500;
+                }
+                
+                .item-color {
+                    font-size: 0.8rem;
+                    color: gray;
+                    font-weight: 300;
+                }
+                
+                .item-price {
+                    font-size: 0.9rem;
+                    color: lime;
+                    font-weight: 400;
+                }
+            }
+
+            .delete-btn {
+                color: red;
+                background-color: transparent;
+                border: 0;
+                height: min-content;
             }
         }
     }
@@ -213,7 +252,7 @@ header {
         border-radius: 20px;
         border: 50px;
         color: white;
-        background-color: #69BB7E;
+        background-color: var(--zayshop);
         padding: 6px 35px;
         float: right;
         cursor: pointer;

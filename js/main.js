@@ -3,7 +3,6 @@ function init_slideshow(slideshow) {
 
     const slides = slideshow.find('.slide');
     const dots = slideshow.find('.dot');
-    const buttons = slideshow.find('.buttons');
 
     var currentSlide = 0; // Tracking current slide
     var last_interaction = Date.now();
@@ -32,12 +31,12 @@ function init_slideshow(slideshow) {
         last_interaction = Date.now();
     });
 
-    buttons.find('.left').click(function() {
+    slideshow.find('.btn-left').click(function() {
         update_slides(currentSlide - 1);
         last_interaction = Date.now();
     });
 
-    buttons.find('.right').click(function() {
+    slideshow.find('.btn-right').click(function() {
         update_slides(currentSlide + 1);
         last_interaction = Date.now();
     });
