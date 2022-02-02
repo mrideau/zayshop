@@ -41,20 +41,22 @@
         
         <ul class="nav-icons">
             <li class="nav-icon">
-                <button>
+                <button id="search-btn">
                     <i class="fas fa-search"></i>
                 </button>
             </li>
             <li class="nav-icon">
-                <button>
+                <button id="cart-btn">
                     <i class="fas fa-cart-arrow-down"></i>
                     <span class="icon-badge">7</span>
                 </button>
             </li>
             <li class="nav-icon">
-            <button>
-                    <i class="fas fa-user"></i>
-                    <span class="icon-badge">+99</span>
+                <button>
+                    <a href="<?php echo home_url( '/user/' ) ?>">
+                        <i class="fas fa-user"></i>
+                        <span class="icon-badge">+99</span>
+                    </a>
                 </button>
             </li>
         </ul>
@@ -64,12 +66,12 @@
             <span class="bar"></span>
         </button>
     </nav>
-    <div class="search-bar">
+    <div id="search-bar">
         <form action="">
             <input type="text" placeholder="Rechercher">
         </form>
     </div>
-    <div class="cart">
+    <div id="cart">
         <h3><i class="fas fa-shopping-cart"></i> Votre panier : 1 item</h3>
         <div class="items">
             <div class="item">

@@ -72,11 +72,10 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            
             gap: 20px;
             
             .feature {
-                flex: 1 1 380px;
+                flex: 0 1 380px;
                 display: flex;
                 flex-direction: column;
                 border: 1px solid var(--border-color);

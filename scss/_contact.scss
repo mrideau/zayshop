@@ -22,7 +22,6 @@
             height: fit-content;
             display: flex;
             flex-direction: column;
-            gap: 15px;
             
             .user-fields {
                 display: flex;
@@ -43,6 +42,7 @@
                 width: 100%;
                 border-radius: 5px;
                 color: var(--contact-form-text-color);
+                margin: 5px auto;
 
                 &[type='submit'] {
                     font-weight: 400;
@@ -51,6 +51,16 @@
                     border: 0;
                     width: auto;
                     float: right;
+                }
+            }
+        }
+
+        @media (max-width: 768px) {
+            form {
+                padding: 20px 0;
+
+                .user-fields {
+                    display: block;
                 }
             }
         }

@@ -10,20 +10,21 @@ get_header(); ?>
 <main id="shop">
     <div class="categories">
         <h2>Categories</h2>
-        <a href="">Gender <i class="fas fa-chevron-circle-down"></i></a>
-        <a href="">Sale <i class="fas fa-chevron-circle-down"></i></a>
-        <a href="">Product <i class="fas fa-chevron-circle-down"></i></a>
+        <nav class="links">
+            <a href="">Gender <i class="fas fa-chevron-circle-down"></i></a>
+            <a href="">Sale <i class="fas fa-chevron-circle-down"></i></a>
+            <a href="">Product <i class="fas fa-chevron-circle-down"></i></a>
+        </nav>
     </div>
 
     <div class="products">
 
         <div class="top">
-            <div class="genders">
-
+            <nav class="genders">
                 <a href="">All</a>
                 <a href="">Men's</a>
                 <a href="">Women's</a>
-            </div>
+            </nav>
 
             <input type="text" placeholder="Featured">
         </div>

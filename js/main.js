@@ -60,4 +60,19 @@ $(document).ready(function() {
     $('.hamburger').click(function() {
         $('#menu-menu-principal').toggleClass( 'active' );
     });
+
+    const searchBar = $('#search-bar');
+    const cart = $('#cart');
+
+    $('#search-btn').click(function() {
+        searchBar.toggle();
+        if (cart.is(':visible'))
+            cart.hide();
+    });
+
+    $('#cart-btn').click(function() {
+        cart.toggle();
+        if (searchBar.is(':visible'))
+            searchBar.hide();
+    });
 })

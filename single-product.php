@@ -8,19 +8,21 @@
                 <img class="current-image" src="<?php echo $images[ 0 ][ 'url' ]; ?>" alt="">
             </div>
             <div class="galery">
-                <button onclick="scroll_thumbnails( -100 )"><i class="fas fa-chevron-left"></i></button>
+                <button class="btn-up" onclick="scroll_vertically( -100 )"><i class="fas fa-chevron-up"></i></button>
+                <button class="btn-left" onclick="scroll_horizontally( -100 )"><i class="fas fa-chevron-left"></i></button>
                 <div class="thumbnails">
                     <ul>
                         <?php foreach( $images as $image ) : ?>
                             <li class="thumbnail">
                                 <button onclick="update_preview( '<?php echo $image['url']; ?>' )">
-                                    <img src="<?php echo esc_url($image['sizes']['thumbnail']); ?>" alt="Thumbnail of <?php echo esc_attr($image['alt']); ?>" />
+                                    <img src="<?php echo esc_url( $image['url'] ); ?>" alt="Thumbnail of <?php echo esc_attr($image['alt']); ?>" />
                                 </button>
                             </li>
                         <?php  endforeach;?>
                     </ul>
                 </div>
-                <button onclick="scroll_thumbnails( 100 )"><i class="fas fa-chevron-right"></i></button>
+                <button class="btn-down" onclick="scroll_vertically( 100 )"><i class="fas fa-chevron-down"></i></button>
+                <button class="btn-right" onclick="scroll_horizontally( 100 )"><i class="fas fa-chevron-right"></i></button>
             </div>
         </div>
         <div class="product-details">
@@ -49,7 +51,7 @@
             </section>
             <div class="product-parameters">
                 <section class="product-sizes">
-                    <p>Size :</p>
+                    <p>Size</p>
                     <form>
                         <?php $sizes_checked_values = get_field( 'sizes' ); ?>
                         <?php if ( $sizes_checked_values ) : ?>
@@ -88,7 +90,9 @@
             <?php endwhile; endif; ?>
         </div>
         <div class="dots">
-
+            <?php for ($i=0; $i < $wp_query->found_posts / 2; $i++) : ?>
+                <span class="dot"></span>
+            <?php endfor; ?>
         </div>
     </div>
 </main>

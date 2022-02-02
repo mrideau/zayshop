@@ -41,6 +41,10 @@ header {
                     font-size: 1.25rem;
                     cursor: pointer;
                     position: relative;
+
+                    a {
+                        color: inherit;
+                    }
                     
                     .icon-badge {
                         font-size: 0.8rem;
@@ -148,6 +152,16 @@ header {
             }
         }
     }
+
+    @media (max-width: 768px) {
+        .top-bar {
+            padding: 10px;
+        }
+
+        nav {
+            padding: 0 25px;
+        }
+    }
 }
 
 .custom-logo {
@@ -155,7 +169,7 @@ header {
     height: auto;
 }
 
-.search-bar {
+#search-bar {
     display: none;
     position: absolute;
     z-index: 2;
@@ -170,7 +184,7 @@ header {
     }
 }
 
-.cart {
+#cart {
     display: none;
     position: absolute;
     z-index: 2;

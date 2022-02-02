@@ -52,7 +52,9 @@ Template Name: Zayshop
     --featured-products-card-bg-color: white;
     --featured-products-card-link-color: #BABABA;
 
-    --single-shop-bg-color: white;
+
+    --single-shop-bg-color: #E9EDF2;
+    --single-shop-details-bg-color: white;
     --single-shop-img-bg-color: white;
     --single-shop-brand-color: #C1C1C1;
     --single-shop-qt-bg-color: #6C757E;
@@ -246,6 +248,11 @@ p {
         margin: 50px 0;
         display: flex;
         gap: 100px;
+        
+        @media (max-width: 768px) {
+            gap: 40px;
+            flex-direction: column;
+        }
 
         li {
             background-color: transparent;
@@ -265,3 +272,4 @@ p {
 @import 'shop';
 @import 'contact';
 @import 'single-product';
+@import 'user';

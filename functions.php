@@ -137,6 +137,10 @@ function zayshop_register_post_type() {
 }
 add_action( 'init', 'zayshop_register_post_type' );
 
+
+
+
+
 // Remove wp admin bar for every user except for administrator
 function remove_admin_bar() {
     if ( !current_user_can( 'administrator' ) && !is_admin() ) {
@@ -144,6 +148,16 @@ function remove_admin_bar() {
     }
 }
 add_action( 'after_setup_theme', 'remove_admin_bar' );
+
+
+
+function zayshop_redirections() {
+    if ( is_page( 'user' ) && !is_user_logged_in() ) {
+        wp_redirect( home_url( '/login/' ) );
+        exit;
+    }
+}
+add_action( 'template_redirect', 'zayshop_redirections' );
 
 // Hiding wp-login and wp-admin pages.
 function redirect_login_page() {
@@ -157,7 +171,6 @@ function redirect_login_page() {
     if ( ($page_viewed === 'wp-login' || $page_viewed === 'wp-admin') && $_SERVER[ 'REQUEST_METHOD' ] == 'GET' ) {
         if (!is_admin()) {
             wp_redirect( home_url( '/404/' . $redirect_to ) );
-            // wp_redirect( home_url( '/404/' ) );
             exit;
         }
     }
@@ -173,13 +186,13 @@ function redirect_login_page() {
         // exit;
     // }
 }
-add_action( 'init', 'redirect_login_page' );
+// add_action( 'init', 'redirect_login_page' );
 
 function zayshop_login_failed() {
     wp_redirect( home_url( '/login/?login=failed' ) );
     exit;
 }
-add_action( 'wp_login_failed', 'zayshop_login_failed' );
+// add_action( 'wp_login_failed', 'zayshop_login_failed' );
 
 function verify_user_login( $user, $username, $password ) {
     if ( $username == '' || $password == '' ) {
@@ -190,10 +203,14 @@ function verify_user_login( $user, $username, $password ) {
 // add_filter( 'authenticate', 'verify_user_login', 1, 3 );
 
 function logout_redirect() {
-	wp_redirect(home_url('/login/?login=false'));
+	wp_redirect (home_url( '/login/?login=false' ) );
 	exit;
 }
-add_action('wp_logout','logout_redirect');
+// add_action('wp_logout','logout_redirect');
+
+
+
+
 
 // Function used to display stars
 function zayshop_stars($stars) {

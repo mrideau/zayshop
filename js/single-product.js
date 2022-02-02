@@ -1,13 +1,17 @@
-var currentImg;
-var thumbnails, thumbnail;
-var products;
+let currentImg;
+let thumbnails, thumbnail;
+let products;
 
 function update_preview(src) {
     currentImg.attr('src', src);
 }
 
-function scroll_thumbnails( offset ) {
-    thumbnails.scrollLeft( thumbnails.scrollLeft() + offset);
+function scroll_horizontally( offset ) {
+    thumbnails.scrollLeft(thumbnails.scrollLeft() + offset);
+}
+
+function scroll_vertically( offset ) {
+    thumbnails.scrollTop(thumbnails.scrollTop() + offset);
 }
 
 $(document).ready(function() {
@@ -15,14 +19,10 @@ $(document).ready(function() {
     thumbnails = $('.thumbnails');
     thumbnail = $('.thumbnail').first();
 
-    dots = $('.related-products').find('.dots');
-    // dots.eq(0).addClass('active');
-
-    
-
+    dots = $('.related-products').find('.dot');
     products = $('.related-products').find('.product-item');
 
-    update_related_products_page(1)
+    update_related_products();
 });
 
 function update_related_products_page(n) {
@@ -61,3 +61,48 @@ function update_related_products_page(n) {
         // update_related_products_page(n)
     });
 }
+
+let current_page = 1;
+let get_items_per_page = () => {
+    return $(window).width() >= 992 ? 4 : 2;
+};
+let get_product_id = () => {
+    return current_page + current_page % products.length - 2;
+}
+
+function update_related_products() {
+    let product_id = get_product_id();
+    let items_per_page = get_items_per_page();
+
+    products.hide();
+
+    for (let index = 0; index < items_per_page; index++) {
+        products.eq(product_id + index).show();
+    }
+
+    dots.hide();
+
+    for (let index = 0; index < products.length / items_per_page; index++) {
+        let dot = dots.eq(index);
+        dot.show();
+        dot.click(function() {
+            dots.eq(current_page - 1).removeClass('active');
+            current_page = index + 1;
+            update_related_products();
+        });
+    }
+
+    dots.eq(current_page - 1).addClass('active');
+}
+
+let x = window.matchMedia("(max-width: 992px)");
+x.addEventListener("change", event => {
+    if (event.matches)
+        update_related_products();
+});
+
+x = window.matchMedia("(min-width: 992px)");
+x.addEventListener("change", event => {
+    if (event.matches)
+        update_related_products();
+});
