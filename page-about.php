@@ -8,7 +8,7 @@
         </div>
         <?php $hero_image = get_field( 'hero_image' ); ?>
         <?php if ( $hero_image ) : ?>
-            <img src="<?php echo esc_url( $hero_image['url'] ); ?>" alt="<?php echo esc_attr( $hero_image['alt'] ); ?>" />
+            <img src="<?php echo esc_url( $hero_image['sizes']['large'] ); ?>" alt="<?php echo esc_attr( $hero_image['alt'] ); ?>" />
         <?php endif; ?>
     </section>
     <section class="section services">
