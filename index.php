@@ -2,7 +2,7 @@
 
 <main id="home">
     <section class="slideshow">
-        <button class="btn-left"><i class="fas fa-4x fa-chevron-left"></i></button>
+        <button aria-label="Slide Left" class="btn-left"><i class="fas fa-4x fa-chevron-left"></i></button>
         <div class="slides">
             <div class="slide slide-1">
                 <div class="text">
@@ -19,7 +19,7 @@
                 <h2>Slide 2</h2>
             </div>
         </div>
-        <button class="btn-right"><i class="fas fa-4x fa-chevron-right"></i></button>
+        <button aria-label="Slide Right" class="btn-right"><i class="fas fa-4x fa-chevron-right"></i></button>
         <div class="dots">
             <span class="dot"></span>
             <span class="dot"></span>
@@ -45,7 +45,7 @@
                         <a href="<?php echo home_url( '/shop/' ); ?>">
                             <img src="<?php echo $image[ 'url' ] ?>" alt="">
                         </a>
-                        <h4><?php echo $term->name; ?></h4>
+                        <p><?php echo $term->name; ?></p>
                         <!-- <a class="link" href="<?php echo $term->slug; ?>">Go Shop</a> -->
                         <a class="link" href="<?php echo home_url( '/shop/' ); ?>">Go Shop</a>
                     </div>

@@ -793,6 +793,10 @@ footer .copyrights a {
   gap: 10px;
 }
 
+#home .cotm .cards .card p {
+  font-weight: 900;
+}
+
 #home .cotm .cards .card img {
   width: 300px;
   border-radius: 50%;

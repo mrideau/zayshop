@@ -22,24 +22,20 @@
             <div class="column">
                 <h3>Products</h3>
                 <span class="separator"></span>
-                <ul>
-                    <?php
-                        wp_nav_menu( array(
-                            'theme_location' => 'footer_products',
-                            'container' => 'ul',
-                        ) ); ?>
-                </ul>
+                <?php
+                    wp_nav_menu( array(
+                        'theme_location' => 'footer_products',
+                        'container' => 'ul',
+                ) ); ?>
             </div>
             <div class="column">
                 <h3>Further Info</h3>
                 <span class="separator"></span>
-                <ul>
-                    <?php
-                        wp_nav_menu( array(
-                            'theme_location' => 'footer_futher_info',
-                            'container' => 'ul',
-                        ) ); ?>
-                </ul>
+                <?php
+                    wp_nav_menu( array(
+                        'theme_location' => 'footer_futher_info',
+                        'container' => 'ul',
+                    ) ); ?>
             </div>
         </div>
         <span class="separator"></span>

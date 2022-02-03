@@ -3,26 +3,26 @@
         <ul>
             <li>
                 <?php $email = get_theme_mod( 'zayshop_mail' ); ?>
-                <a href="mailto:<?php echo $email; ?>"><i class="fas fa-envelope"></i> <?php echo $email ?></a>
+                <a aria-label="Email Adress" href="mailto:<?php echo $email; ?>"><i class="fas fa-envelope"></i> <?php echo $email ?></a>
             </li>
             <li>
                 <?php $tel = get_theme_mod( 'zayshop_tel' ); ?>
                 <?php preg_match_all( '([0-9]+)', $tel, $matches ); ?>
-                <a href="tel:+<?php echo implode( $matches[ 0 ] ); ?>"><i class="fas fa-phone-alt"></i> <?php echo get_theme_mod( 'zayshop_tel' ) ?></a>
+                <a aria-label="Phone Number" href="tel:+<?php echo implode( $matches[ 0 ] ); ?>"><i class="fas fa-phone-alt"></i> <?php echo get_theme_mod( 'zayshop_tel' ) ?></a>
             </li>
         </ul>
         <ul>
             <li>
-                <a href=""><i class="fab fa-facebook-f"></i></a>
+                <a aria-label="Facebook Page" href=""><i class="fab fa-facebook-f"></i></a>
             </li>
             <li>
-                <a href=""><i class="fab fa-instagram"></i></a>
+                <a aria-label="Instagram Page" href=""><i class="fab fa-instagram"></i></a>
             </li>
             <li>
-                <a href=""><i class="fab fa-twitter"></i></a>
+                <a aria-label="Twitter Page" href=""><i class="fab fa-twitter"></i></a>
             </li>
             <li>
-                <a href=""><i class="fab fa-linkedin"></i></a>
+                <a aria-label="Linkedin Page" href=""><i class="fab fa-linkedin"></i></a>
             </li>
         </ul>
     </div>
@@ -41,18 +41,18 @@
         
         <ul class="nav-icons">
             <li class="nav-icon">
-                <button id="search-btn">
+                <button aria-label="Open Search Bar" id="search-btn">
                     <i class="fas fa-search"></i>
                 </button>
             </li>
             <li class="nav-icon">
-                <button id="cart-btn">
+                <button aria-label="Open Cart" id="cart-btn">
                     <i class="fas fa-cart-arrow-down"></i>
                     <span class="icon-badge">7</span>
                 </button>
             </li>
             <li class="nav-icon">
-                <button>
+                <button aria-label="User Page">
                     <a href="<?php echo home_url( '/user/' ) ?>">
                         <i class="fas fa-user"></i>
                         <span class="icon-badge">+99</span>
