@@ -41,10 +41,10 @@
         <span class="separator"></span>
         <div class="bottom">
             <div class="sci">
-                <a href=""><i class="fab fa-lg fa-facebook-f"></i></a>
-                <a href=""><i class="fab fa-lg fa-instagram"></i></a>
-                <a href=""><i class="fab fa-lg fa-twitter"></i></a>
-                <a href=""><i class="fab fa-lg fa-linkedin"></i></a>
+                <a aria-label="Facebook Page" href=""><i class="fab fa-lg fa-facebook-f"></i></a>
+                <a aria-label="Instagram Page" href=""><i class="fab fa-lg fa-instagram"></i></a>
+                <a aria-label="Twitter Page" href=""><i class="fab fa-lg fa-twitter"></i></a>
+                <a aria-label="Linkedin Page" href=""><i class="fab fa-lg fa-linkedin"></i></a>
             </div>
             <div class="mail">
                 <form>
