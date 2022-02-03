@@ -89,10 +89,12 @@ ul {
 a {
     text-decoration: none;
     color: inherit;
+    appearance: none; // Ensure web browser wont change colors
 }
 
 button {
     color: inherit;
+    appearance: none; // Ensure web browser wont change colors
 }
 
 h2 {
