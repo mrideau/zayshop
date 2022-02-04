@@ -45,7 +45,7 @@
                 if ( get_field( 'category_of_the_month', $term ) ) :
                     $image = get_field( 'image', $term );?>
                     <div class="card">
-                        <a href="<?php echo home_url( '/shop/' ); ?>">
+                        <a aria-label="Go To Shop Image Link" href="<?php echo home_url( '/shop/' ); ?>">
                             <img src="<?php echo esc_url( $image[ 'sizes' ][ 'medium' ] ); ?>"
                             alt="<?php echo esc_attr( $image[ 'alt' ] ); ?>"
                             width="<?php echo esc_attr( $image[ 'sizes' ][ 'medium-width' ] ); ?>"
@@ -53,7 +53,7 @@
                             loading="lazy">
                         </a>
                         <p><?php echo $term->name; ?></p>
-                        <a class="link" href="<?php echo home_url( '/shop/' ); ?>">Go Shop</a>
+                        <a class="link" aria-label="Go To Shop Image Link" href="<?php echo home_url( '/shop/' ); ?>">Go Shop</a>
                     </div>
                 <?php endif;
             }?>
@@ -69,8 +69,11 @@
             <?php if ( get_field( 'is_featured_product', get_the_ID() ) ) : ?>
             <div class="feature">
                 <div class="img-box">
-                    <a href="<?php the_permalink(); ?>">
-                        <?php the_post_thumbnail( null, 'medium' ); ?>
+                    <a aria-label="Go To Product <?php the_title(); ?>" href="<?php the_permalink(); ?>">
+                        <!-- <?php the_post_thumbnail( null, 'medium' ); ?> -->
+                        <img src="<?php echo esc_url( get_the_post_thumbnail_url( null, 'large' ) ); ?>"
+                            alt="<?php the_title(); ?>"
+                            loading="lazy">
                     </a>
                 </div>
                 <div class="details">
