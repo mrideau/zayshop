@@ -60,7 +60,7 @@
                 </button>
             </li>
         </ul>
-        <button arial-label="Open Mobile Navigation Menu" class="hamburger">
+        <button arial-label="Open Mobile Navigation Menu" class="nav-burger">
             <span class="bar"></span>
             <span class="bar"></span>
             <span class="bar"></span>
