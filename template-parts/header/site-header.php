@@ -13,16 +13,16 @@
         </ul>
         <ul>
             <li>
-                <a aria-label="Facebook Page" href=""><i class="fab fa-facebook-f"></i></a>
+                <a aria-label="Facebook Page" href="https://facebook.com/zayshop"><i class="fab fa-facebook-f"></i></a>
             </li>
             <li>
-                <a aria-label="Instagram Page" href=""><i class="fab fa-instagram"></i></a>
+                <a aria-label="Instagram Page" href="https://instagram.com/zayshop"><i class="fab fa-instagram"></i></a>
             </li>
             <li>
-                <a aria-label="Twitter Page" href=""><i class="fab fa-twitter"></i></a>
+                <a aria-label="Twitter Page" href="https://twitter.com/zayshop"><i class="fab fa-twitter"></i></a>
             </li>
             <li>
-                <a aria-label="Linkedin Page" href=""><i class="fab fa-linkedin"></i></a>
+                <a aria-label="Linkedin Page" href="https://linkedin.com/zayshop"><i class="fab fa-linkedin"></i></a>
             </li>
         </ul>
     </div>

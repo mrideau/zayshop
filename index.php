@@ -83,7 +83,7 @@
                     </div>
                     <h2><?php the_title(); ?></h2>
                     <p><?php the_excerpt(); ?></p>
-                    <a href="">Reviews (<?php echo get_comments_number(); ?>)</a>
+                    <a href="<?php the_permalink(); ?>">Reviews (<?php echo get_comments_number(); ?>)</a>
                 </div>
             </div>
             <?php endif; endwhile; endif; ?>
