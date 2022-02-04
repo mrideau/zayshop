@@ -12,7 +12,11 @@
                 </div>
                 <?php $slide_1_image = get_field( 'slide_1_image' ); ?>
                 <?php if ( $slide_1_image ) : ?>
-                    <img src="<?php echo esc_url( $slide_1_image['url'] ); ?>" alt="<?php echo esc_attr( $slide_1_image['alt'] ); ?>" />
+                    <img src="<?php echo esc_url( $slide_1_image['sizes'][ 'medium' ] ); ?>"
+                    alt="<?php echo esc_attr( $slide_1_image['alt'] ); ?>"
+                    width="<?php echo esc_attr( $slide_1_image['sizes'][ 'medium-width' ] ); ?>"
+                    height="<?php echo esc_attr( $slide_1_image['sizes'][ 'medium-height' ] ); ?>"
+                    loading="lazy">
                 <?php endif; ?>
             </div>
             <div class="slide slide-2">
@@ -41,12 +45,14 @@
                 if ( get_field( 'category_of_the_month', $term ) ) :
                     $image = get_field( 'image', $term );?>
                     <div class="card">
-                        <!-- <a href="<?php echo $term->slug; ?>"> -->
                         <a href="<?php echo home_url( '/shop/' ); ?>">
-                            <img src="<?php echo $image[ 'url' ] ?>" alt="">
+                            <img src="<?php echo esc_url( $image[ 'sizes' ][ 'medium' ] ); ?>"
+                            alt="<?php echo esc_attr( $image[ 'alt' ] ); ?>"
+                            width="<?php echo esc_attr( $image[ 'sizes' ][ 'medium-width' ] ); ?>"
+                            height="<?php echo esc_attr( $image[ 'sizes' ][ 'medium-height' ] ); ?>"
+                            loading="lazy">
                         </a>
                         <p><?php echo $term->name; ?></p>
-                        <!-- <a class="link" href="<?php echo $term->slug; ?>">Go Shop</a> -->
                         <a class="link" href="<?php echo home_url( '/shop/' ); ?>">Go Shop</a>
                     </div>
                 <?php endif;
@@ -64,7 +70,7 @@
             <div class="feature">
                 <div class="img-box">
                     <a href="<?php the_permalink(); ?>">
-                        <?php the_post_thumbnail(); ?>
+                        <?php the_post_thumbnail( null, 'medium' ); ?>
                     </a>
                 </div>
                 <div class="details">

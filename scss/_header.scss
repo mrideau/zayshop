@@ -4,9 +4,9 @@ header {
     
     .top-bar {
         background-color: var(--topbar-bg-color);
-        padding: 10px 50px;
+        padding: 12px 50px;
         color: var(--text-color-bright);
-        font-size: 0.8rem;
+        font-size: 0.95rem;
 
         a {
             color: inherit;
@@ -20,7 +20,7 @@ header {
         ul {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 15px;
         }
     }
     

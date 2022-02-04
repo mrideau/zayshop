@@ -38,8 +38,11 @@ function zayshop_setup() {
 
     // Images Sizes
     add_image_size( 'brand-thumbnail', 100, 70 );
+    remove_image_size( '1024x1024' );
+    remove_image_size( '1536x1536' );
+    remove_image_size( '2048x2048' );
 
-    // Add options page for ACF
+    // Add options page for ACF extension
     acf_add_options_page();
 }
 add_action( 'after_setup_theme', 'zayshop_setup' );

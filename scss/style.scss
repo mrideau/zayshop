@@ -4,9 +4,6 @@ Author: Rideau Matis
 Version: 1.0
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;500;700;900&display=swap');
-
 :root {
     --zayshop: #69BB7E;
     
@@ -78,7 +75,7 @@ Version: 1.0
 }
 
 html, body, input {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'Arial', sans-serif;
     color: var(--text-color);
 }
 
