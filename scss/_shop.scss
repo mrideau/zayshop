@@ -32,6 +32,7 @@
                 padding: 10px;
                 border: 1px solid var(--border-color);
                 border-radius: 5px;
+                font-weight: 500;
 
                 &::placeholder {
                     color: var(--shop-text-color);
@@ -74,12 +75,16 @@
     .products-grid {
         padding-top: 25px;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax( 270px, 1fr ));
+        grid-template-columns: 1fr 1fr 1fr;
         gap: 10px;
     }
 
     @media (max-width: 992px) and (min-width: 768px) {
         grid-template-columns: 1fr;
+
+        .products-grid {
+            grid-template-columns: 1fr 1fr;
+        }
 
         .categories {
             margin: 40px 0;
@@ -101,8 +106,13 @@
     }
 
     @media (max-width: 768px) {
-        padding: 30px 20px;
+        padding: 30px 50px;
         grid-template-columns: 1fr;
+
+        .products-grid {
+            gap: 20px;
+            grid-template-columns: 1fr;
+        }
 
         .categories {
             h2 {

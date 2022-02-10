@@ -18,14 +18,12 @@ get_header(); ?>
     </div>
 
     <div class="products">
-
         <div class="top">
             <nav class="genders">
                 <a href="">All</a>
                 <a href="">Men's</a>
                 <a href="">Women's</a>
             </nav>
-
             <input type="text" placeholder="Featured">
         </div>
 

@@ -1,66 +1,58 @@
 <?php
 
 function zayshop_setup() {
-    // Add document title tag <head>
+    // Auto set title/description in head
     add_theme_support( 'title-tag' );
 
     // Add support for custom logo
     add_theme_support( 'custom-logo' );
+    // add_theme_support( 'custom-header' );
 
-    // Posts
+    // Add thumbnails
     add_theme_support( 'post-thumbnails' );
-
-    // add_theme_support( 'custom-spacing' );
-
-    // Widgets
-    add_theme_support( 'widgets' );
-    add_theme_support( 'widgets-block-editor' );
-    add_theme_support( 'customize-selective-refresh-widgets' );
-
-    // Typography
-    // add_theme_support( 'disable-custom-font-sizes' );
-    // add_theme_support( 'editor-font-sizes', [
-    //     [
-    //         'name' => 'text',
-    //         'size' => '12',
-    //         'slug' => 'zayshop-text'
-    //     ],
-    // ] );
-    // add_theme_support( 'custom-line-height' );
 
     // Register navigation menus
     register_nav_menus( array(
         'primary' => __( 'Primary Menu' ),
         'footer_products' => 'Footer Products',
-        'footer_futher_info' => 'Further Info
-        '
+        'footer_futher_info' => 'Further Info'
     ) );
 
     // Images Sizes
     add_image_size( 'brand-thumbnail', 100, 70 );
+    // Remove default non-used image sizes
     remove_image_size( '1024x1024' );
     remove_image_size( '1536x1536' );
     remove_image_size( '2048x2048' );
 
-    // Add options page for ACF extension
+    // Add ACF option page in backoffice
     acf_add_options_page();
+
+    // Hide admin bar for every user except for logged-in administrator role
+    if ( !current_user_can( 'administrator' ) && !is_admin() )
+        show_admin_bar( false );
 }
 add_action( 'after_setup_theme', 'zayshop_setup' );
 
 function zayshop_scripts() {
+    if ( !current_user_can( 'administrator' ) && !is_admin() ) {
+        wp_deregister_style( 'dashicons' );
+    }
     wp_enqueue_style( 'zayshop-style', get_stylesheet_uri() );
+    // JQuery
     wp_deregister_script('jquery');
     wp_register_script('jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js', false, '', true);
     wp_enqueue_script('jquery');
     wp_enqueue_script( 'zayshop-js', get_template_directory_uri() . '/js/main.js', array( 'jquery' ) );
     
-    // Add JS for single-product page
+    // Add single-product JS
     if ( is_single() && get_post_type() == 'product' ) {
         wp_enqueue_script( 'zayshop-js-single-product', get_template_directory_uri() . '/js/single-product.js' );
     }
 }
 add_action( 'wp_enqueue_scripts', 'zayshop_scripts' );
 
+// Add customizer fields to set some informations used in the theme
 function zayshop_customize_register( $wp_customize ) {
     $wp_customize->add_setting('zayshop_adress');
     $wp_customize->add_setting('zayshop_tel');
@@ -86,21 +78,7 @@ function zayshop_customize_register( $wp_customize ) {
 }
 add_action( 'customize_register', 'zayshop_customize_register' );
 
-function zayshop_widgets_init() {
-    // register_sidebar( array(
-    //     'name' => 'top-bar'
-    // ) );
-
-    // register_sidebar( array(
-    //     'name' => 'header-widget'
-    // ) );
-
-    // register_sidebar( array(
-    //     'name' => 'footer'
-    // ) );
-}
-add_action( 'widgets_init', 'zayshop_widgets_init' );
-
+// Register 'product' post type to store our products
 function zayshop_register_post_type() {
     $labels = array(
         'name' => 'Products',
@@ -139,19 +117,6 @@ function zayshop_register_post_type() {
     register_taxonomy( 'product_category', 'product', $args );
 }
 add_action( 'init', 'zayshop_register_post_type' );
-
-
-
-
-
-// Remove wp admin bar for every user except for administrator
-function remove_admin_bar() {
-    if ( !current_user_can( 'administrator' ) && !is_admin() ) {
-        show_admin_bar( false );
-    }
-}
-add_action( 'after_setup_theme', 'remove_admin_bar' );
-
 
 
 function zayshop_redirections() {
@@ -229,6 +194,7 @@ function zayshop_stars($stars) {
     <?php
 }
 
+// Function to display product
 function zayshop_product() {
     ?>
     <article class="product-item">
@@ -252,6 +218,7 @@ function zayshop_product() {
     <?php
 }
 
+// Function to display brands
 function zayshop_brands() {
     ?>
     <section class="section brands">

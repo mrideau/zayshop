@@ -21,6 +21,9 @@
             </div>
             <div class="slide slide-2">
                 <h2>Slide 2</h2>
+                <h2>Proident occaecat</h2>
+                <h3>Aliquip ex ea commodo consequat</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem cupiditate minus libero, repellendus laborum sed! Eos totam labore ad, perspiciatis ipsam, et nemo at earum vel rerum tempore repellat iusto!</p>
             </div>
         </div>
         <button aria-label="Slide Right" class="btn-right"><i class="fas fa-4x fa-chevron-right"></i></button>

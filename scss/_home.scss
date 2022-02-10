@@ -1,6 +1,6 @@
 #home {
     .slideshow {
-        height: 70vh;
+        // min-height: 40vh;
 
         .slide-1 {
             display: flex;
@@ -16,9 +16,8 @@
                 line-height: 1.5rem;
             }
 
-            img {
-                // width: 350px;
-                // height: 350px;
+            @media (max-width: 768px) {
+                flex-direction: column;
             }
         }
     }

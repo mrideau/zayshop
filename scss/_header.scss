@@ -7,15 +7,14 @@ header {
         padding: 12px 50px;
         color: var(--text-color-bright);
         font-size: 0.95rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
 
         a {
             color: inherit;
             font-weight: 300;
         }
-
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
         
         ul {
             display: flex;
@@ -128,7 +127,7 @@ header {
                     z-index: 999;
                     display: inline-block;
                     position: absolute;
-                    top: 120px;
+                    top: 82px;
                     left: 0;
                     background-color: var(--header-mobile-bg-color);
                     width: 100%;
@@ -151,7 +150,7 @@ header {
 
     @media (max-width: 768px) {
         .top-bar {
-            padding: 10px;
+            display: none;
         }
 
         nav {
@@ -169,13 +168,14 @@ header {
     display: none;
     position: absolute;
     z-index: 2;
-    right: 150px;
-    bottom: -20px;
+    right: 50%;
+    bottom: 0px;
+    transform: translate(50%, 50%);
     
     input {
         padding: 10px;
         border: 1px solid var(--border-color);
-        width: 20vw;
+        width: 50vw;
         border-radius: 20px;
     }
 }
@@ -222,7 +222,7 @@ header {
                 
                 .item-price {
                     font-size: 0.9rem;
-                    color: lime;
+                    color: var(--zayshop);
                     font-weight: 400;
                 }
             }

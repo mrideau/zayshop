@@ -5,13 +5,36 @@ function init_slideshow(slideshow) {
     const dots = slideshow.find('.dot');
 
     var currentSlide = 0; // Tracking current slide
-    var last_interaction = Date.now();
+    var last_interaction = Date.now(); // Traking last interaction
+
+    // Determine the tallest slide and set all slide to this height
+    // function resize() {
+    //     var maxHeight = -1;
+
+    //     slides.each(function() {
+    //         maxHeight = maxHeight > $(this).height() ? maxHeight : $(this).height();
+    //     });
+
+    //     slides.each(function() {
+    //         $(this).height(maxHeight);
+    //     });
+    // }
+
+    // // Initialize
+    // resize();
+
+    // // Resize slideshow when changing window size
+    // $(window).resize(function() {
+    //     resize();
+    // });
 
     // Initialize all slides
     // Hide all slides and display the current slide
     // Start automatic slideshow
     function init() {
+        // slides.css('visibility', 'hidden');
         slides.hide();
+        // slides.eq(currentSlide).css('visibility', 'visible');
         slides.eq(currentSlide).show();
         dots.eq(currentSlide).addClass('active')
         start_interval(); // Automatic slideshow
@@ -19,10 +42,14 @@ function init_slideshow(slideshow) {
 
     // Hide our current slide and show the desired one
     function update_slides(i, pauseInverval) {
-        slides.eq(currentSlide).fadeOut(500);
+        // slides.eq(currentSlide).fadeOut(500);
+        // slides.eq(currentSlide).css('visibility', 'hidden');
+        slides.eq(currentSlide).hide();
         dots.eq(currentSlide).removeClass('active')
-        currentSlide = i > slides.length - 1 ? 0 : i < 0 ? slides.length : i; // Check if the desired slide exists
-        slides.eq(currentSlide).fadeIn(500);
+        currentSlide = i > slides.length - 1 ? 0 : i < 0 ? slides.length - 1 : i; // Check if the desired slide exists
+        // slides.eq(currentSlide).fadeIn(500);
+        // slides.eq(currentSlide).css('visibility', 'visible');
+        slides.eq(currentSlide).show();
         dots.eq(currentSlide).addClass('active')
     }
 
@@ -54,10 +81,9 @@ function init_slideshow(slideshow) {
 $(document).ready(function() {
     init_slideshow($('.slideshow'));
 
-
     // Optimize
     // Hide on click page link
-    $('.hamburger').click(function() {
+    $('.nav-burger').click(function() {
         $('#menu-menu-principal').toggleClass( 'active' );
     });
 

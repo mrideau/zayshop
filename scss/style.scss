@@ -142,20 +142,20 @@ p {
 
 .slideshow {
     background-color: var(--slideshow-bg-color);
-    // display: flex;
     display: grid;
     grid-template-columns: auto 1fr auto;
     grid-template-rows: 1fr auto;
-
+    
     .slides {
+        // min-height: 100%;
+        // display: flex;
         position: relative;
-        height: 100%;
 
         .slide {
-            position: absolute;
+            // position: absolute;
             width: 100%;
-            height: 100%;
-            padding: 10%;
+            // min-height: 100%;
+            padding: 5%;
         }
     }
 
@@ -180,6 +180,7 @@ p {
             width: 25px;
             height: 2px;
             border: 0;
+            transition: 1s;
 
             &.active {
                 background-color: var(--zayshop);
@@ -195,7 +196,8 @@ p {
 
     .img-box {
         width: 100%;
-        height: 350px;
+        // height: 350px;
+        aspect-ratio: 1 / 1.3;
         background-position: top;
         background-size: cover;
         display: flex;
@@ -271,6 +273,58 @@ p {
     }
 }
 
+// Generic CSS for form
+form {
+    margin: auto;
+    // padding: 80px;
+    font-weight: 300;
+    // width: 80%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    
+    .user-fields {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+
+        label {
+            width: 100%;
+        }
+    }
+    
+    input, textarea {
+        font-family: inherit;
+        font-size: 1.1rem;
+        font-weight: inherit;
+        padding: 10px;
+        border: 1px solid var(--border-color);
+        width: 100%;
+        border-radius: 5px;
+        color: var(--contact-form-text-color);
+        margin: 5px auto;
+
+        &[type='submit'] {
+            font-weight: 400;
+            background-color: var(--zayshop);
+            color: var(--contact-form-submit-text-color);
+            border: 0;
+            width: auto;
+            float: right;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    form {
+        padding: 20px 0;
+
+        .user-fields {
+            display: block;
+        }
+    }
+}
+
 @import 'header';
 @import 'footer';
 @import 'home';
@@ -279,3 +333,4 @@ p {
 @import 'contact';
 @import 'single-product';
 @import 'user';
+@import 'login';
