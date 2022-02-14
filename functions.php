@@ -54,7 +54,8 @@ function zayshop_scripts() {
     
     // Add single-product JS
     if ( is_single() && get_post_type() == 'product' ) {
-        wp_enqueue_script( 'zayshop-js-single-product', get_template_directory_uri() . '/js/single-product.js' );
+        wp_register_script( 'zayshop-js-single-product', get_template_directory_uri() . '/js/single-product.js', array( 'jquery' ), '', true );
+        wp_enqueue_script('zayshop-js-single-product');
     }
 }
 add_action( 'wp_enqueue_scripts', 'zayshop_scripts' );
@@ -218,50 +219,5 @@ function zayshop_stars($stars) {
             </li>
         <?php endfor; ?>
     </ul>
-    <?php
-}
-
-// Function to display product
-function zayshop_product() {
-    ?>
-    <article class="product-item">
-        <div class="img-box" style="background-image: url('<?php the_post_thumbnail_url(); ?>');">
-            <a aria-label="like" class="like-btn" href=""><i class="far fa-2x fa-heart"></i></a>
-            <div class="buttons">
-                <a href=""><i class="far fa-heart"></i></a>
-                <a href="<?php echo the_permalink(); ?>"><i class="fas fa-eye"></i></a>
-                <a href=""><i class="fas fa-cart-plus"></i></a>
-            </div>
-        </div>
-        <div class="details">
-            <a aria-label="Add to cart" class="cart-btn" href=""><i class="fas fa-cart-plus"></i></a>
-            <p class="title"><?php the_title() ?></p>
-            <?php $sizes = get_field( 'sizes' ); ?>
-            <?php if ( $sizes ) : ?>
-                <p class="sizes"><?php echo implode( '/', $sizes ); ?></p>
-            <?php endif; ?>
-            <?php zayshop_stars( get_field( 'stars' ) ); ?>
-            <p class="price">$<?php echo number_format( get_field( 'price' ), 2 ) ?></p>
-        </div>
-    </article>
-    <?php
-}
-
-// Function to display brands
-function zayshop_brands() {
-    ?>
-    <section class="section brands">
-        <h2>Our Brands</h2>
-        <p class="section-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae iusto.</p>
-        <?php 
-        $images = get_field( 'brands', 'options' ); ?>
-        <ul class="brands-list">
-            <?php foreach( $images as $image ) : ?>
-                <li>
-                    <img src="<?php echo esc_url($image['sizes']['brand-thumbnail']); ?>" alt="Thumbnail of <?php echo esc_attr($image['alt']); ?>" />
-                </li>
-            <?php  endforeach;?>
-        </ul>
-    </section>
     <?php
 }

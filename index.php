@@ -1,36 +1,6 @@
 <?php get_header(); ?>
 
 <main id="home">
-    <!-- <section class="slideshow">
-        <button aria-label="Slide Left" class="btn-left"><i class="fas fa-4x fa-chevron-left"></i></button>
-        <div class="slides">
-            <div class="slide slide-1">
-                <div class="text">
-                    <h2>Proident occaecat</h2>
-                    <h3>Aliquip ex ea commodo consequat</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem cupiditate minus libero, repellendus laborum sed! Eos totam labore ad, perspiciatis ipsam, et nemo at earum vel rerum tempore repellat iusto!</p>
-                </div>
-                <?php $slide_1_image = get_field( 'slide_1_image' ); ?>
-                <?php if ( $slide_1_image ) : ?>
-                    <img src="<?php echo esc_url( $slide_1_image['sizes'][ 'medium' ] ); ?>"
-                    alt="<?php echo esc_attr( $slide_1_image['alt'] ); ?>"
-                    width="<?php echo esc_attr( $slide_1_image['sizes'][ 'medium-width' ] ); ?>"
-                    height="<?php echo esc_attr( $slide_1_image['sizes'][ 'medium-height' ] ); ?>">
-                <?php endif; ?>
-            </div>
-            <div class="slide slide-2">
-                <h2>Slide 2</h2>
-                <h2>Proident occaecat</h2>
-                <h3>Aliquip ex ea commodo consequat</h3>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem cupiditate minus libero, repellendus laborum sed! Eos totam labore ad, perspiciatis ipsam, et nemo at earum vel rerum tempore repellat iusto!</p>
-            </div>
-        </div>
-        <button aria-label="Slide Right" class="btn-right"><i class="fas fa-4x fa-chevron-right"></i></button>
-        <div class="dots">
-            <span class="dot"></span>
-            <span class="dot"></span>
-        </div>
-    </section> -->
     <section class="slideshow">
         <div class="inner-slideshow">
             <button aria-label="Slide Left" class="btn-left"><i class="fas fa-4x fa-chevron-left"></i></button>

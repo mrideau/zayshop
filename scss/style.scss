@@ -72,7 +72,6 @@ Version: 1.0
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    // overflow-x: hidden;
 }
 
 html, body, input {
@@ -204,7 +203,7 @@ p {
         justify-content: center;
         align-content: center;
         width: 100%;
-        // height: 100%;
+        height: 100%;
         overflow-x: hidden;
 
         button {
@@ -377,43 +376,45 @@ p {
 }
 
 // Generic CSS for form
-form {
-    margin: auto;
-    // padding: 80px;
-    font-weight: 300;
-    // width: 80%;
-    height: fit-content;
-    display: flex;
-    flex-direction: column;
-    
-    .user-fields {
+.wpcf7 {
+    form {
+        margin: auto;
+        // padding: 80px;
+        font-weight: 300;
+        // width: 80%;
+        height: fit-content;
         display: flex;
-        justify-content: space-between;
-        gap: 10px;
-
-        label {
-            width: 100%;
-        }
-    }
+        flex-direction: column;
+        
+        .user-fields {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
     
-    input, textarea {
-        font-family: inherit;
-        font-size: 1.1rem;
-        font-weight: inherit;
-        padding: 10px;
-        border: 1px solid var(--border-color);
-        width: 100%;
-        border-radius: 5px;
-        color: var(--contact-form-text-color);
-        margin: 5px auto;
-
-        &[type='submit'] {
-            font-weight: 400;
-            background-color: var(--zayshop);
-            color: var(--contact-form-submit-text-color);
-            border: 0;
-            width: auto;
-            float: right;
+            label {
+                width: 100%;
+            }
+        }
+        
+        input, textarea {
+            font-family: inherit;
+            font-size: 1.1rem;
+            font-weight: inherit;
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            width: 100%;
+            border-radius: 5px;
+            color: var(--contact-form-text-color);
+            margin: 5px auto;
+    
+            &[type='submit'] {
+                font-weight: 400;
+                background-color: var(--zayshop);
+                color: var(--contact-form-submit-text-color);
+                border: 0;
+                width: auto;
+                float: right;
+            }
         }
     }
 }

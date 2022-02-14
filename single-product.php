@@ -86,7 +86,7 @@
             <?php
             $wp_query = new WP_Query( "post_type=product&order=ASC" ); ?>
             <?php if ( $wp_query->have_posts() ) : while( $wp_query->have_posts() ) : $wp_query->the_post() ?>
-            <?php zayshop_product(); ?>
+            <?php get_template_part( 'template-parts/product' ) ?>
             <?php endwhile; endif; ?>
         </div>
         <div class="dots">

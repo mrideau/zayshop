@@ -29,7 +29,7 @@ get_header(); ?>
 
         <div class="products-grid">
             <?php if ( $wp_query->have_posts() ) : while( $wp_query->have_posts() ) : $wp_query->the_post() ?>
-            <?php zayshop_product(); ?>
+            <?php get_template_part( 'template-parts/product' ) ?>
             <?php endwhile; endif; ?>
         </div>
 
@@ -40,6 +40,6 @@ get_header(); ?>
     
 </main>
 
-<?php zayshop_brands(); ?>
+<?php get_template_part( 'template-parts/brands' ); ?>
 
 <?php get_footer(); ?>
