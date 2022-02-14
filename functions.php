@@ -39,9 +39,11 @@ function zayshop_scripts() {
         wp_deregister_style( 'dashicons' );
     }
     wp_enqueue_style( 'zayshop-style', get_stylesheet_uri() );
-    // 
+
+    // Fonts
     wp_enqueue_style( 'gfont-roboto', 'https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap' );
     wp_enqueue_style( 'gfont-lato', 'https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;500;700;900&display=swap' );
+    
     // JQuery
     wp_deregister_script('jquery');
     wp_register_script('jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js', false, '', true);
@@ -66,11 +68,11 @@ function zayshop_style_loader_tag( $html, $handle, $href, $media ) {
 add_filter( 'style_loader_tag', 'zayshop_style_loader_tag', 10, 4 );
 
 function zayshop_script_loader_tag( $tag, $handle ) {
-    $scripts = array( 'zayshop-js', 'zayshop-js-single-product', 'jquery' );
-    foreach ($scripts as $script) {
-        if ( $script === $handle )
-            return str_replace( ' src', ' async="async" defer="defer" src', $tag );
-    }
+    $scripts = array( 'zayshop-js-single-product' );
+    
+    if( in_array( $handle, $scripts ) )
+        return str_replace( ' src', ' async="async" defer="defer" src', $tag );
+
     return $tag;
 }
 add_filter( 'script_loader_tag', 'zayshop_script_loader_tag', 10, 2 );

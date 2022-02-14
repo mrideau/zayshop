@@ -72,6 +72,7 @@ Version: 1.0
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    // overflow-x: hidden;
 }
 
 html, body, input {
@@ -140,41 +141,114 @@ p {
     }
 }
 
+// .slideshow {
+//     background-color: var(--slideshow-bg-color);
+//     display: grid;
+//     grid-template-columns: auto 1fr auto;
+//     grid-template-rows: 1fr auto;
+//     width: 100%;
+    
+//     .slides {
+//         // min-height: 100%;
+//         // display: flex;
+//         position: relative;
+
+//         .slide {
+//             // position: absolute;
+//             width: 100%;
+//             // min-height: 100%;
+//             padding: 5%;
+//         }
+//     }
+
+//     .btn-left, .btn-right {
+//         padding: 15px;
+//         border: 0;
+//         color: var(--slideshow-button-color);
+//         background-color: transparent;
+//         cursor: pointer;
+//     }
+
+//     .dots {
+//         grid-column: 2 / 3;
+//         justify-self: center;
+//         display: flex;
+//         gap: 5px;
+//         padding: 10px;
+
+//         .dot {
+//             cursor: pointer;
+//             background-color: var(--slideshow-button-color);
+//             width: 25px;
+//             height: 2px;
+//             border: 0;
+//             transition: 1s;
+
+//             &.active {
+//                 background-color: var(--zayshop);
+//             }
+//         }
+//     }
+// }
+
 .slideshow {
     background-color: var(--slideshow-bg-color);
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    grid-template-rows: 1fr auto;
-    
-    .slides {
-        // min-height: 100%;
-        // display: flex;
-        position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 70vh;
+    position: relative;
 
-        .slide {
-            // position: absolute;
-            width: 100%;
-            // min-height: 100%;
-            padding: 5%;
+    .inner-slideshow {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        width: 100%;
+        // height: 100%;
+        overflow-x: hidden;
+
+        button {
+            position: absolute;
+            padding: 10px;
+            border: 0;
+            color: var(--slideshow-button-color);
+            background-color: transparent;
+            cursor: pointer;
+            top: 50%;
+            transform: translateY(-50%);
+
+            &.btn-left {
+                left: 0;
+            }
+            
+            &.btn-right {
+                right: 0;
+            }
         }
-    }
+        
+        .slides {
+            width: 100%;
+            // height: 100%;
+            display: flex;
+            
+            .slide {
+                padding: 4rem;
+                min-height: 100%;
+                width: 100vw;
+            }
+        }
+    }    
 
-    .btn-left, .btn-right {
-        padding: 15px;
-        border: 0;
-        color: var(--slideshow-button-color);
-        background-color: transparent;
-        cursor: pointer;
-    }
-
-    .dots {
-        grid-column: 2 / 3;
-        justify-self: center;
+    .indicators {
+        position: absolute;
+        bottom: 0;
         display: flex;
         gap: 5px;
         padding: 10px;
+        width: 100%;
+        justify-content: center;
 
-        .dot {
+        .indicator {
             cursor: pointer;
             background-color: var(--slideshow-button-color);
             width: 25px;

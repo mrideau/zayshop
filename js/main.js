@@ -2,10 +2,12 @@ function init_slideshow(slideshow) {
     if ( !slideshow ) return;
 
     const slides = slideshow.find('.slide');
-    const dots = slideshow.find('.dot');
+    const dots = slideshow.find('.indicator');
 
     var currentSlide = 0; // Tracking current slide
     var last_interaction = Date.now(); // Traking last interaction
+
+    console.log('test');
 
     // Determine the tallest slide and set all slide to this height
     // function resize() {
@@ -32,9 +34,7 @@ function init_slideshow(slideshow) {
     // Hide all slides and display the current slide
     // Start automatic slideshow
     function init() {
-        // slides.css('visibility', 'hidden');
         slides.hide();
-        // slides.eq(currentSlide).css('visibility', 'visible');
         slides.eq(currentSlide).show();
         dots.eq(currentSlide).addClass('active')
         start_interval(); // Automatic slideshow
@@ -42,13 +42,9 @@ function init_slideshow(slideshow) {
 
     // Hide our current slide and show the desired one
     function update_slides(i, pauseInverval) {
-        // slides.eq(currentSlide).fadeOut(500);
-        // slides.eq(currentSlide).css('visibility', 'hidden');
         slides.eq(currentSlide).hide();
         dots.eq(currentSlide).removeClass('active')
         currentSlide = i > slides.length - 1 ? 0 : i < 0 ? slides.length - 1 : i; // Check if the desired slide exists
-        // slides.eq(currentSlide).fadeIn(500);
-        // slides.eq(currentSlide).css('visibility', 'visible');
         slides.eq(currentSlide).show();
         dots.eq(currentSlide).addClass('active')
     }
