@@ -39,6 +39,9 @@ function zayshop_scripts() {
         wp_deregister_style( 'dashicons' );
     }
     wp_enqueue_style( 'zayshop-style', get_stylesheet_uri() );
+    // 
+    wp_enqueue_style( 'gfont-roboto', 'https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap' );
+    wp_enqueue_style( 'gfont-lato', 'https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;500;700;900&display=swap' );
     // JQuery
     wp_deregister_script('jquery');
     wp_register_script('jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js', false, '', true);
