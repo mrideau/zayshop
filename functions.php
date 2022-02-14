@@ -54,9 +54,9 @@ add_action( 'wp_enqueue_scripts', 'zayshop_scripts' );
 
 function zayshop_loader_tag( $tag, $handle ) {
     $scripts = array( 'zayshop-js', 'zayshop-js-single-product', 'jquery' );
-    foreach ($script as $scripts) {
+    foreach ($scripts as $script) {
         if ( $script === $handle )
-            return str_replace( ' src', ' async="async" defer="defer" src' );
+            return str_replace( ' src', ' async="async" defer="defer" src', $tag );
     }
     return $tag;
 }
