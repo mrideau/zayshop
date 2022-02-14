@@ -31,7 +31,7 @@
             <span class="dot"></span>
         </div>
     </section> -->
-    <section class="slideshow">
+    <!-- <section class="slideshow">
         <div class="inner-slideshow">
             <button aria-label="Slide Left" class="btn-left"><i class="fas fa-4x fa-chevron-left"></i></button>
             <button aria-label="Slide Right" class="btn-right"><i class="fas fa-4x fa-chevron-right"></i></button>
@@ -62,7 +62,7 @@
             <span class="indicator"></span>
             <span class="indicator"></span>
         </div>
-    </section>
+    </section> -->
 
     <section class="section cotm">
         <h2>Categories of The Month</h2>
