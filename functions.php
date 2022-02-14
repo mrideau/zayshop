@@ -48,7 +48,7 @@ function zayshop_scripts() {
     wp_deregister_script('jquery');
     wp_register_script('jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js', false, '', true);
     wp_enqueue_script('jquery');
-    wp_enqueue_script( 'zayshop-js', get_template_directory_uri() . '/js/main.js', array( 'jquery' ) );
+    wp_enqueue_script( 'zayshop', get_template_directory_uri() . '/js/main.js', array( 'jquery' ) );
     
     // Add single-product JS
     if ( is_single() && get_post_type() == 'product' ) {
@@ -68,10 +68,10 @@ function zayshop_style_loader_tag( $html, $handle, $href, $media ) {
 add_filter( 'style_loader_tag', 'zayshop_style_loader_tag', 10, 4 );
 
 function zayshop_script_loader_tag( $tag, $handle ) {
-    $scripts = array( 'zayshop-js-single-product' );
+    $scripts = array( 'jquery', 'zayshop', 'zayshop-js-single-product' );
     
     if( in_array( $handle, $scripts ) )
-        return str_replace( ' src', ' async="async" defer="defer" src', $tag );
+        return str_replace( ' src', ' defer="defer" src', $tag );
 
     return $tag;
 }
