@@ -52,6 +52,16 @@ function zayshop_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'zayshop_scripts' );
 
+function zayshop_loader_tag( $tag, $handle ) {
+    $scripts = array( 'main.js', 'single-product.js' );
+    foreach ($script as $scripts) {
+        if ( $script === $handle )
+            return str_replace( ' src', ' async="async" defer="defer" src' );
+    }
+    return $tag;
+}
+add_filter( 'script_loader_tag', 'zayshop_loader_tag', 10, 2 );
+
 // Add customizer fields to set some informations used in the theme
 function zayshop_customize_register( $wp_customize ) {
     $wp_customize->add_setting('zayshop_adress');
