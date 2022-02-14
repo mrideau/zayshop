@@ -48,7 +48,9 @@ function zayshop_scripts() {
     wp_deregister_script('jquery');
     wp_register_script('jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js', false, '', true);
     wp_enqueue_script('jquery');
-    wp_enqueue_script( 'zayshop', get_template_directory_uri() . '/js/main.js', array( 'jquery' ) );
+
+    wp_register_script( 'zayshop', get_template_directory_uri() . '/js/main.js', array( 'jquery' ), '', true );
+    wp_enqueue_script('zayshop');
     
     // Add single-product JS
     if ( is_single() && get_post_type() == 'product' ) {
