@@ -7,8 +7,6 @@ function init_slideshow(slideshow) {
     var currentSlide = 0; // Tracking current slide
     var last_interaction = Date.now(); // Traking last interaction
 
-    console.log('test');
-
     // Determine the tallest slide and set all slide to this height
     // function resize() {
     //     var maxHeight = -1;
