@@ -70,10 +70,10 @@ function zayshop_style_loader_tag( $html, $handle, $href, $media ) {
 add_filter( 'style_loader_tag', 'zayshop_style_loader_tag', 10, 4 );
 
 function zayshop_script_loader_tag( $tag, $handle ) {
-    $scripts = array( 'jquery', 'zayshop', 'zayshop-js-single-product' );
+    $scripts = array( 'zayshop', 'zayshop-js-single-product' );
     
     if( in_array( $handle, $scripts ) )
-        return str_replace( ' src', ' defer="defer" src', $tag );
+        return str_replace( ' src', ' async="async" defer="defer" src', $tag );
 
     return $tag;
 }
