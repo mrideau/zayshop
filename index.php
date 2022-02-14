@@ -15,8 +15,7 @@
                     <img src="<?php echo esc_url( $slide_1_image['sizes'][ 'medium' ] ); ?>"
                     alt="<?php echo esc_attr( $slide_1_image['alt'] ); ?>"
                     width="<?php echo esc_attr( $slide_1_image['sizes'][ 'medium-width' ] ); ?>"
-                    height="<?php echo esc_attr( $slide_1_image['sizes'][ 'medium-height' ] ); ?>"
-                    loading="lazy">
+                    height="<?php echo esc_attr( $slide_1_image['sizes'][ 'medium-height' ] ); ?>">
                 <?php endif; ?>
             </div>
             <div class="slide slide-2">
