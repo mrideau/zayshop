@@ -52,7 +52,17 @@ function zayshop_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'zayshop_scripts' );
 
-function zayshop_loader_tag( $tag, $handle ) {
+function zayshop_style_loader_tag( $html, $handle, $href, $media ) {
+    if ( ! is_admin() ) {
+        $html = '<link rel="preload" href="' . $href . '" as="style" id="' . $handle . '" media="' . $media . '" onload="this.onload=null;this.rel=\'stylesheet\'">'
+            . '<noscript>' . $html . '</noscript>';
+    }
+    return $html;
+
+}
+add_filter( 'style_loader_tag', 'zayshop_style_loader_tag', 10, 4 );
+
+function zayshop_script_loader_tag( $tag, $handle ) {
     $scripts = array( 'zayshop-js', 'zayshop-js-single-product', 'jquery' );
     foreach ($scripts as $script) {
         if ( $script === $handle )
@@ -60,7 +70,7 @@ function zayshop_loader_tag( $tag, $handle ) {
     }
     return $tag;
 }
-add_filter( 'script_loader_tag', 'zayshop_loader_tag', 10, 2 );
+add_filter( 'script_loader_tag', 'zayshop_script_loader_tag', 10, 2 );
 
 // Add customizer fields to set some informations used in the theme
 function zayshop_customize_register( $wp_customize ) {
